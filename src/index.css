@@ -32,7 +32,20 @@ body {
     monospace;
 } */
 
-.App {
+.AppDark {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:220px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #1b3a4c;
+  box-shadow: -20px 20px 60px #173141,
+              20px 20px 60px #1f4357;
+}
+
+.AppLight {
   display:flex;
   flex-direction: column;
   justify-content: center;
@@ -45,10 +58,18 @@ body {
               20px 20px 60px #ffffff;
 }
 
-li{
+.liDark{
+  padding: 15px;
+  color:silver;
+}
+.liDark:nth-of-type(odd){
+  color:rgb(233, 231, 231);
+}
+
+.liLight{
   padding: 15px;
 }
-li:nth-of-type(odd){
+.liLight:nth-of-type(odd){
   color:rgb(74, 73, 73);
 }
 
@@ -62,6 +83,14 @@ li:nth-of-type(odd){
   margin:30px;
   padding: 40px;
   border-radius: 10px;
+  background: #1b3a4c;
+  box-shadow: inset -9px 9px 18px #173141, 
+            inset 9px -9px 18px #1f4357;
+}
+.serchResultLight{
+  margin:30px;
+  padding: 40px;
+  border-radius: 10px;
   background: #eef0f5;
   box-shadow: inset -9px 9px 18px #dddfe4, 
             inset 9px -9px 18px #ffffff;
@@ -71,6 +100,15 @@ li:nth-of-type(odd){
   margin-right: 10px;
 }
 .inputWrap:nth-child(1){
+  background: #1b3a4c;
+  border-radius: 4px;
+  box-shadow: inset -9px 9px 10px #173141, 
+            inset 9px -9px 10px #1f4357;
+}
+.inputWrapLight{
+  margin-right: 10px;
+}
+.inputWrapLight:nth-child(1){
   background: #f6f6f6;
   border-radius: 4px;
 }

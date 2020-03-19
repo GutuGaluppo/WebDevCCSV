@@ -5,12 +5,12 @@ class ShowResults extends React.Component{
 
     }
     render(){
-        const {results} = this.props
+        const {results, darkMode} = this.props
         return(
             <ol>
                 {results.map(
                     (product,i)=>{
-                    return <li key={i}>Name: {product.name}</li>
+                    return <li key={i} className={darkMode?'liDark':'liLight'}>Name: {product.name}</li>
                     }
                 )}
             </ol>

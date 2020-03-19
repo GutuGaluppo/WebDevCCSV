@@ -6,12 +6,12 @@ class SearchButton extends React.Component{
 
     }
     render(){
-        const {onSearch}=this.props
+        const {onSearch, darkMode}=this.props
         return(
             <Button
             variant={'contained'}
-            color='primary'
             onClick={onSearch}
+            color={darkMode?'secondary':'primary'}
             >
                 Search
             </Button>

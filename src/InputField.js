@@ -3,9 +3,9 @@ import TextField from "@material-ui/core/TextField";
 
 class InputFields extends React.Component{
     render(){
-        const {inputField, onChange, name} = this.props
+        const {inputField, onChange, name, darkMode} = this.props
         return(
-            <div className='inputWrap'>
+            <div className={darkMode?'inputWrap':'inputWrapLight'}>
                 <TextField 
                 id={name}
                 type="number"
@@ -13,7 +13,13 @@ class InputFields extends React.Component{
                 onChange={(e)=>onChange(name,e.target.value)}
                 variant='outlined'
                 label='Product Name'
-                color='primary'                
+                color={darkMode && 'secondary'}
+                inputProps={{
+                    style:{color: darkMode && "#02e2f2"}
+                }}
+                InputLabelProps={{
+                    style:{color: darkMode && "#02e2f2"}
+                }}              
                 />
             </div>
         )
