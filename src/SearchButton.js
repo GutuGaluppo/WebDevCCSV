@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from "@material-ui/core/Button";
 
 class SearchButton extends React.Component{
     state={
@@ -7,7 +8,13 @@ class SearchButton extends React.Component{
     render(){
         const {onSearch}=this.props
         return(
-            <button onClick={onSearch}>Search</button>
+            <Button
+            variant={'contained'}
+            color='primary'
+            onClick={onSearch}
+            >
+                Search
+            </Button>
         )
     }
 }

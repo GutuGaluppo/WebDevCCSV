@@ -10,7 +10,7 @@ class ShowResults extends React.Component{
             <ol>
                 {results.map(
                     (product,i)=>{
-                    return <li key={i}>Name:{product.name}</li>
+                    return <li key={i}>Name: {product.name}</li>
                     }
                 )}
             </ol>

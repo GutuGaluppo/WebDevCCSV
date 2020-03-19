@@ -1,9 +1,28 @@
 import React from 'react';
-import './App.css';
 import result from './data.json'
 import InputField from './InputField'
 import SearchButton from './SearchButton'
 import ShowResults from './ShowResults'
+import Grid from '@material-ui/core/Grid'
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+  palette:{
+    primary: {
+      main:'#007BA7',
+    }
+  },
+  typography: {
+    fontFamily: [
+      'Nunito',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif'
+    ].join(','),
+  }
+});
+
 
 class App extends React.Component {
   state={
@@ -27,19 +46,25 @@ class App extends React.Component {
   }
   render (){
     return(
-      <div className="App">
-        <InputField
-          inputField={this.state.inputSphere}
-          name="inputSphere"
-          onChange={this.onChange}
-        />
-        <SearchButton
-          onSearch={this.onSearch}
-        />
-        <ShowResults
-          results={this.state.results}
-        />
-      </div>
+      <ThemeProvider theme={theme}>
+        <div className="App">
+          <Grid className='searchField'>
+            <InputField
+              inputField={this.state.inputSphere}
+              name="inputSphere"
+              onChange={this.onChange}
+            />
+            <SearchButton
+              onSearch={this.onSearch}
+            />
+          </Grid>
+          <Grid className='serchResult'>
+            <ShowResults
+              results={this.state.results}
+            />
+          </Grid>
+        </div>
+      </ThemeProvider>
     )
   }
 }
